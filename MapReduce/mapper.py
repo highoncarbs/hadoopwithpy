@@ -1,4 +1,5 @@
 import sys 
+
 def mapper():
 
 	# Read input line
