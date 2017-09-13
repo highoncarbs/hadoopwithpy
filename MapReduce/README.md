@@ -8,3 +8,6 @@ With the newest hadoop version or Streaming jar file is located at `/usr/local/h
 hadoop jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-2.8.1.jar -file ./mapper.py -input -mapper ./mapper.py -file ./reducer.py -reducer ./reducer.py -input ./data/purchases.txt -output ./test-output
 ```
 
+
+Also make sure , your python script has executable permission. It can be done by :
+`chmod +x ./your_script.py`

@@ -17,18 +17,17 @@ def mapper():
 
 			# Now we'll print our data as required for the reducer task
 			# I need category and cost so we'll print that
-			print "{0}\t{1}".format(store , cost)
+			print "{0}/t{1}".format(category , cost)
 
 mapper()
-
 '''
 
 # Testing : 
 
-test_data = """2012-01-01\t09:00\tSan Jose\tMen's Clothing\t214.05\tAmex\n
-	2012-01-01\t09:00\tFort Worth\tWomen's Clothing\t153.57\tVisa\n
-	2012-01-01\t09:00\tSan Diego\tMusic\t66.08\tCash\n
-	2012-01-01\t09:00\tPittsburgh\tPet Supplies\t493.51\tDiscover\n
+test_data = """2012-01-01\t09:00\tSan Jose\tMen's Clothing\t214.05\tAmex
+	2012-01-01\t09:00\tFort Worth\tWomen's Clothing\t153.57\tVisa
+	2012-01-01\t09:00\tSan Diego\tMusic\t66.08\tCash
+	2012-01-01\t09:00\tPittsburgh\tPet Supplies\t493.51\tDiscover
 	2012-01-01\t09:00\tOmaha\tChildren's Clothing\t235.63\tMasterCard"""
 
 def main():
