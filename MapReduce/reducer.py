@@ -1,10 +1,11 @@
+#!/usr/bin/env python
+
 import sys 
 
 def main():
-
 	# Following the mapper.py , we need to get total
 	# sales based on category.
-
+	print "bum"
 	salesTotal = 0
 	oldKey = None 
 
@@ -19,12 +20,11 @@ def main():
 			continue
 
 		thisKey , thisSale = data 
-		if oldKey and oldKey != thiskey:
+		if oldKey and oldKey != thisKey:
 			# The if statement makes sure to get 
 			# sales only of that key 
 
-			print oldKey,"\t",salesTotal
-			oldKey = thisKey
+			print "{0}\t{1}".format(thisKey ,salesTotal)
 			# reset the Total Sales for the next category(key)
 			salesTotal = 0 
 
@@ -32,7 +32,7 @@ def main():
 		salesTotal += float(thisSale)
 
 	if oldKey != None:
-		print oldKey , "\t",salesTotal
+		print oldKey,"\t",salesTotal
 
 
 # Calling the main function
