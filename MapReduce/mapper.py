@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import sys 
+import sys
 
 def mapper():
 	# Read input line
@@ -10,10 +10,10 @@ def mapper():
 
 		# We'll use the data stored in data/mapreduce/
 		# Having six columns of tab seperated values
-		# We'll make sure that correct data in sent through 
+		# We'll make sure that correct data in sent through
 		print data
 		if len(data) == 6:
-			date , time , store , category ,cost , payment = data 
+			date , time , store , category ,cost , payment = data
 
 			# Now we'll print our data as required for the reducer task
 			# I need category and cost so we'll print that
@@ -23,7 +23,7 @@ mapper()
 
 '''
 
-# Testing : 
+# Testing :
 
 test_data = """2012-01-01\t09:00\tSan Jose\tMen's Clothing\t214.05\tAmex\n
 	2012-01-01\t09:00\tFort Worth\tWomen's Clothing\t153.57\tVisa\n
