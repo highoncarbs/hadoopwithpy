@@ -1,4 +1,4 @@
-🎥 # Reommending Movies using MapReduce
+# 🎥 Reommending Movies using MapReduce
 
 This program recommends Movies from the MovieLens data submet of 1000 movies.
 
