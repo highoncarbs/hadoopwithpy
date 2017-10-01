@@ -29,7 +29,7 @@ Reducer 3 : Final result displayed grouped by movie name
 '''
 
 import sys
-
+import ast
 def reducer():
 
     oldKey = None
@@ -57,13 +57,13 @@ def reducer():
             oldKey = x
             rating_arr = []
         oldKey = x
-        rating_arr.append(y)
+        rating_arr.append(ast.literal_eval(y))
         # print rating_arr
     if oldKey != None:
         print "{0},{1}".format(oldKey , rating_arr)
 
 
-# '''
+'''
 # Testbed
 
 test_data= """671,(4973,4.5)\n671,(4993,5.0)\n670,(4995,4.0)"""
@@ -78,4 +78,4 @@ def main():
 	sys.stdin = sys.__stdin__
 
 main()
-# '''
+'''
