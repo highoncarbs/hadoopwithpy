@@ -30,18 +30,21 @@ Reducer 3 : Final result displayed grouped by movie name
 
 import sys
 from itertools import combinations
+import ast
+
 def mapper():
     # Mapper-2
     for line in sys.stdin:
         # Each line holds ratings and movie id per user
+
         data = line.strip().split(',' , 1)
-        userid , ratings = data
+        userid , ratings = ast.literal_eval(data[0]) , ast.literal_eval(data[1])
         rating_pair = []
         for rat1 , rat2 in combinations(ratings , 2):
             # combinations will give two tuples/list
             m1 = rat1[0] #Movieid-1
             r1 = rat1[1] #rating-1
-
+            #
             m2 = rat2[0] #Movieid-2
             r2 = rat2[1] #rating-2
 
@@ -51,3 +54,21 @@ def mapper():
             print "{0},{1}".format((m1,m2),(r1,r2))
             # Prints the second combination
             print "{0},{1}".format((m2,m1),(r2,r1))
+
+
+'''
+# Testbed
+
+test_data= """671,[(4973, 4.5), (4993, 5.0)]\n670,[(4995, 4.0)]"""
+
+def main():
+
+	# Used for testing the mapper function
+
+	import StringIO
+	sys.stdin = StringIO.StringIO(test_data)
+	mapper()
+	sys.stdin = sys.__stdin__
+
+main()
+'''
