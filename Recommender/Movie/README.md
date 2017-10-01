@@ -1,6 +1,6 @@
-🎥 # Reommending Movies using MapReduce
+# 🎥 Reommending Movies using MapReduce
 
-This program recommends Movies from the MovieLens data submet of 1000 movies.
+This program recommends Movies from the MovieLens data subset of 1000 random movies.
 
 The whole program is written in python and uses Hadoop Streaming java libs to run it , instead of using MrJob.
 
