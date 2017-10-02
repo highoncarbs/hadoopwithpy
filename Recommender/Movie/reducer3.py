@@ -27,3 +27,7 @@ Mapper 3 :  Get movie Name and Sort based on similarity Score
 Reducer 3 : Final result displayed grouped by movie name
 
 '''
+import sys
+
+
+def mapper():

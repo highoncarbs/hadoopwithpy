@@ -27,10 +27,9 @@ Mapper 3 :  Get movie Name and Sort based on similarity Score
 Reducer 3 : Final result displayed grouped by movie name
 
 '''
-
+from __future__ import print_function
 import sys
 from math import sqrt
-from __future__ import print_function
 
 def reducer():
     '''
@@ -52,7 +51,7 @@ def reducer():
         rating_pair = 0
         score , num_pair = cosine(rating_pair)
 
-        if (num_pair>10 and score > 0.95)
+        if (num_pair>10 and score > 0.95):
             print("{0},{1}".format(moviepair , (score , num_pair)))
 
 def cosine(rating_pair):
@@ -94,7 +93,7 @@ def main():
 
 	import StringIO
 	sys.stdin = StringIO.StringIO(test_data)
-	mapper()
+	red()
 	sys.stdin = sys.__stdin__
 
 main()
