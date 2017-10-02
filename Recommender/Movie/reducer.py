@@ -63,10 +63,10 @@ def reducer():
         print "{0},{1}".format(oldKey , rating_arr)
 
 
-'''
+# '''
 # Testbed
 
-test_data= """671,(4973,4.5)\n671,(4993,5.0)\n670,(4995,4.0)"""
+test_data= """671,(4973,4.5)\n671,(4993,5.0)\n671,(4995,4.0)\n672,(4195,2.0)\n672,(4975,4.0)"""
 
 def main():
 
@@ -78,4 +78,4 @@ def main():
 	sys.stdin = sys.__stdin__
 
 main()
-'''
+# '''

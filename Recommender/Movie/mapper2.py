@@ -50,16 +50,15 @@ def mapper():
 
             # Now we'll append combination
             # rating_pair.append((m1,m2))
-            # rating_pair.append((r1,r2))
+            # rating_pair.append((r1,r2)) --or--
             print "{0},{1}".format((m1,m2),(r1,r2))
             # Prints the second combination
-            print "{0},{1}".format((m2,m1),(r2,r1))
-
-
-'''
+# '''
 # Testbed
 
-test_data= """671,[(4973, 4.5), (4993, 5.0)]\n670,[(4995, 4.0)]"""
+test_data= """671,[(4973, 4.5), (4993, 5.0), (4995, 4.0)]
+672,[(4195, 2.0), (4975, 4.0) , (4995, 4.0)]
+"""
 
 def main():
 
@@ -71,4 +70,4 @@ def main():
 	sys.stdin = sys.__stdin__
 
 main()
-'''
+# '''
