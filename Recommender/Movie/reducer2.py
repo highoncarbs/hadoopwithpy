@@ -20,6 +20,7 @@ Input – > userID, [(movieID,ratings) (movieID,ratings)…]
 output -> (movieID,movieID) , (rating, rating)
 
 Reducer 2 :  Compute rating based similarity for each movie pair (Cosine Similarity)
+Inital – > Mapred2 applies set on output of Mapper2 and gives values required by Input
 Input – > (movieID, movieID), ([(rating,rating)(rating,rating)…]
 Output – > (movieID, movieID), (Similarity Score, Number of users who saw both)
 
@@ -30,6 +31,7 @@ Reducer 3 : Final result displayed grouped by movie name
 from __future__ import print_function
 import sys
 from math import sqrt
+import ast
 
 def reducer():
     '''
@@ -43,16 +45,17 @@ def reducer():
     OUTPUT :
     (movieid , movieid),(similarity , count)
     '''
-    for line in sys.stdin:
 
+    for line in sys.stdin:
         # Need to check the input
         # Accoring to flow , this needs a moviepair and ist of ratings
-        # TODO*
-        rating_pair = 0
+
+        line = ast.literal_eval(line)
+        movie_pair , rating_pair = line
         score , num_pair = cosine(rating_pair)
 
-        if (num_pair>10 and score > 0.95):
-            print("{0},{1}".format(moviepair , (score , num_pair)))
+        if (num_pair>0 and score > 0.95):
+            print("{0},{1}".format(movie_pair , (score , num_pair)))
 
 def cosine(rating_pair):
     '''
@@ -83,18 +86,22 @@ def cosine(rating_pair):
 # '''
 # Testbed
 
-test_data= """671,[(4973, 4.5), (4993, 5.0), (4995, 4.0)]
-672,[(4195, 2.0), (4975, 4.0) , (4995, 4.0)]
+test_data= """(4973, 4993),[(4.5, 5.0), (4.5, 5.0), (3.5, 3.0), (4.0, 4.0)]
+(4993, 4995),[(5.0, 4.0), (5.0, 4.0)]
+(4195, 4995),[(2.0, 4.0), (2.0, 4.0)]
+(4195, 4975),[(2.0, 4.0), (2.0, 4.0)]
+(4975, 4995),[(4.0, 4.0), (4.0, 4.0)]
+(4973, 4995),[(4.5, 4.0), (4.5, 4.0)]
 """
 
 def main():
 
-	# Used for testing the mapper function
+    # Used for testing the mapper function
 
-	import StringIO
-	sys.stdin = StringIO.StringIO(test_data)
-	red()
-	sys.stdin = sys.__stdin__
+    import StringIO
+    sys.stdin = StringIO.StringIO(test_data)
+    reducer()
+    sys.stdin = sys.__stdin__
 
 main()
 # '''

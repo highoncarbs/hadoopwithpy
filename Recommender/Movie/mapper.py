@@ -41,7 +41,6 @@ def mapper():
     # Read input line
     for line in sys.stdin:
         # Strip whitespace and delimiter - ','
-        print line
         data = line.strip().split(',')
 
         if len(data) == 4:

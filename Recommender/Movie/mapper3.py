@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
-This reducer computes the similarity between movies using ratings.
+This mapper gets the movie name and it's similar items.
 Data set used is MoviLens small dataset
 
 Mapreduce work :
