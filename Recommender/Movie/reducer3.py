@@ -28,6 +28,38 @@ Reducer 3 : Final result displayed grouped by movie name
 
 '''
 import sys
+import ast
+
+def reducer():
+
+    for line in sys.stdin:
+        # Need to check the input
+        # Accoring to flow , this needs a moviepair and ist of ratings
+
+        line = ast.literal_eval(line)
+        # movie_pair , score_rating_pair = line
+        group_movies = []
 
 
-def mapper():
+# '''
+# Testbed
+
+test_data = '''4973 , 4993 [0.9957241920665914][4]
+4993 , 4995 [0.9999999999999998][2]
+4195 , 4995 [0.9999999999999998][2]
+4195 , 4975 [0.9999999999999998][2]
+4975 , 4995 [0.9999999999999998][2]
+4973 , 4995 [1.0][2]
+'''
+
+def main():
+
+    # Used for testing the mapper function
+
+    import StringIO
+    sys.stdin = StringIO.StringIO(test_data)
+    reducer()
+    sys.stdin = sys.__stdin__
+
+main()
+# '''
